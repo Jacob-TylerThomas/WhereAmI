@@ -1,0 +1,1 @@
+Boilerplate code for an applicaton to demonstrate permissions and location services.
