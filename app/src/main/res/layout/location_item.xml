@@ -1,0 +1,62 @@
+<!--
+//        Copyright 2018 Lucas Layman Licensed under the
+//        Educational Community License, Version 2.0 (the "License"); you may
+//        not use this file except in compliance with the License. You may
+//        obtain a copy of the License at
+//
+//        http://www.osedu.org/licenses/ECL-2.0
+//
+//        Unless required by applicable law or agreed to in writing,
+//        software distributed under the License is distributed on an "AS IS"
+//        BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+//        or implied. See the License for the specific language governing
+//        permissions and limitations under the License.
+-->
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="12dp"
+    android:paddingBottom="12dp">
+
+    <TextView
+        android:id="@+id/id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/timestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@id/id"
+        app:layout_constraintTop_toTopOf="@id/id" />
+
+    <TextView
+        android:id="@+id/item_lat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@id/timestamp"
+        app:layout_constraintTop_toTopOf="@id/id" />
+
+    <TextView
+        android:id="@+id/item_lon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@id/item_lat"
+        app:layout_constraintTop_toTopOf="@id/id" />
+
+    <TextView
+        android:id="@+id/item_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@id/item_lon"
+        app:layout_constraintTop_toTopOf="@id/id" />
+
+</android.support.constraint.ConstraintLayout>
