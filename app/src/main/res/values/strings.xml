@@ -1,10 +1,15 @@
 <resources>
     <string name="app_name">WhereAmI</string>
-    <string name="intro_label">This app will tell you where you are</string>
+    <string name="intro_label">Current location</string>
     <string name="not_found">Your location could not be determined.</string>
     <string name="permission_warning">This app requires permission to access your location in order to function correctly.</string>
     <string name="lat_label">Latitude:</string>
     <string name="long_label">Longitude:</string>
     <string name="accuracy_label">Accuracy:</string>
     <string name="na">N/A</string>
+    <string name="time_header">Timestamp</string>
+    <string name="lat_header">lat</string>
+    <string name="lon_header">lon</string>
+    <string name="acc_header">acc</string>
+    <string name="history_label">History</string>
 </resources>

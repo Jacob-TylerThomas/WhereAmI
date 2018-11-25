@@ -15,7 +15,12 @@ public class LocationRecording {
     private double longitude;
     private double acc;
 
-    public LocationRecording() { }
+    public LocationRecording(Date timestamp, double latitude, double longitude, double acc) {
+        this.timestamp = timestamp;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.acc = acc;
+    }
     
     public LocationRecording(long id, Date timestamp, double latitude, double longitude, double acc) {
         this.id = id;
