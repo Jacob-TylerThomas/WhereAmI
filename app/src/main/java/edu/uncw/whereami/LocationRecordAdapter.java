@@ -13,6 +13,7 @@
 
 package edu.uncw.whereami;
 
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -27,6 +28,7 @@ import io.objectbox.Box;
 import io.objectbox.query.QueryBuilder;
 
 public class LocationRecordAdapter extends RecyclerView.Adapter<LocationRecordAdapter.MyViewHolder> {
+
     private static final DateFormat formatter = new SimpleDateFormat("MM-dd-yy HH:mm:ss");
 
     private Box<LocationRecording> locationBox;
@@ -41,6 +43,7 @@ public class LocationRecordAdapter extends RecyclerView.Adapter<LocationRecordAd
     // you provide access to all the views for a data item in a view holder
     class MyViewHolder extends RecyclerView.ViewHolder {
         public LinearLayout layout;
+        TextView id;
         TextView timestamp;
         TextView latitude;
         TextView longitude;
@@ -49,6 +52,7 @@ public class LocationRecordAdapter extends RecyclerView.Adapter<LocationRecordAd
         MyViewHolder(LinearLayout v) {
             super(v);
             layout = v;
+            id = v.findViewById(R.id.item_id);
             timestamp = v.findViewById(R.id.timestamp);
             latitude = v.findViewById(R.id.item_lat);
             longitude = v.findViewById(R.id.item_lon);
@@ -75,12 +79,13 @@ public class LocationRecordAdapter extends RecyclerView.Adapter<LocationRecordAd
 
 
         List<LocationRecording> locations = locationBox.query().order(LocationRecording_.timestamp, QueryBuilder.DESCENDING).build().find();
-        if (position < locations.size()) {
+        if(position < locations.size() ) {
             LocationRecording loc = locations.get(position);
+            holder.id.setText(Long.toString(loc.getId()));
             holder.timestamp.setText(formatter.format(loc.getTimestamp()));
             holder.latitude.setText(String.format("%.7f", loc.getLatitude()));
             holder.longitude.setText(String.format("%.7f", loc.getLongitude()));
-            holder.accuracy.setText(String.format("%.2f", loc.getAcc()));
+            holder.accuracy.setText(String.format("%.2f",loc.getAcc()));
         }
     }
 

@@ -21,9 +21,16 @@
     android:paddingBottom="12dp">
 
     <TextView
-        android:id="@+id/timestamp"
-        android:layout_width="125dp"
+        android:id="@+id/item_id"
+        android:layout_width="24dp"
         android:layout_height="wrap_content"
+        android:gravity="end" />
+
+    <TextView
+        android:id="@+id/timestamp"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
         android:gravity="start" />
 
     <TextView
