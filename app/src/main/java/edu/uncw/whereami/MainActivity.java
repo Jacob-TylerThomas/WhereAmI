@@ -1,5 +1,8 @@
 package edu.uncw.whereami;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
@@ -30,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void recordClick(View view) {
-        Toast.makeText(this, "This button does nothing useful!", Toast.LENGTH_SHORT).show();
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+        }
+
+        else {
+            Toast.makeText(this, "Please enable location permissions if you would like to access this feature.", Toast.LENGTH_SHORT).show();
+
+        }
+
     }
 }
