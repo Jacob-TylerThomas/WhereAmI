@@ -1,6 +1,12 @@
 package edu.uncw.whereami;
 
 import android.app.Application;
+import android.location.Location;
+
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationResult;
+import com.google.android.gms.location.LocationServices;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -47,7 +53,11 @@ public class App extends Application {
 
             locationBox.put(itemsToAdd);
         }
-    }
+
+
+
+        }
+
 
     public BoxStore getBoxStore() {
         return boxStore;
