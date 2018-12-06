@@ -111,7 +111,9 @@ public class MainActivity extends AppCompatActivity {
                         public void onSuccess(Location location) {
                             // Got last known location. In some rare situations this can be null.
                             if (location != null) {
-                                // Logic to handle location object
+                                //use distance formlua here
+                                //find getLatitude, longitude
+                                latText.setText(String.valueOf(location));
                             }
                         }
                     });
